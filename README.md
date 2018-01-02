@@ -23,7 +23,7 @@ psql -s <db_name>
 
 # create user (where <username> and <password> are desired username and password respectively) and grant permissions
 create user <username> password '<password>';
-GRANT ALL PRIVILEGES ON DATABASE db_name TO <username>;
+GRANT ALL PRIVILEGES ON DATABASE <db_name> TO <username>;
 
 # quit
 \q
