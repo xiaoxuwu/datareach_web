@@ -90,6 +90,7 @@ POST api/hospitals/
 {
   "name":<desired_name>
 }
+# ALL FIELDS REQUIRED
 
 # get any specific hospital (if superuser), or get your own hospital information, if supplying your own hospital id (otherwise get rejected)
 GET api/hospitals/id/
@@ -120,6 +121,7 @@ POST api/patients/
 {
   check models.py, and note hospital field should be id of desired Hospital, NOT the id of the group of the hospital
 }
+# ALL FIELDS REQUIRED
 
 # get any specific patient (if superuser), or get patient of your hospital (if normal user) or rejected if not your patient
 GET api/patients/id/
