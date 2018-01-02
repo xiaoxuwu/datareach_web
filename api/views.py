@@ -66,11 +66,11 @@ class DoctorViewSet(viewsets.ModelViewSet):
 			return JsonResponse({'detail':'last_name parameter missing.'}, status=422)
 		if 'password' not in request.data:
 			return JsonResponse({'detail':'password parameter missing.'}, status=422)
-		if 'hospital_group_id' not in request.data:
-			return JsonResponse({'detail':'hospital_group_id parameter missing.'}, status=422)
+		if 'hospital_group' not in request.data:
+			return JsonResponse({'detail':'hospital_group parameter missing.'}, status=422)
 		# validate hospital exists
 		try:
-			hospital_group = Group.objects.get(id=request.data['hospital_group_id'])
+			hospital_group = Group.objects.all().filter(name__contains=request.data['hospital_group']).first()
 		except Group.DoesNotExist:
 			return JsonResponse({'detail':'hospital_group_id does not exist.'}, status=404)
 		# validate user with username does not exist
