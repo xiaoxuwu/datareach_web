@@ -3,14 +3,16 @@ Django DataReach API
 
 # Setup
 1. Clone repo
-2. Install conda 4.4+, python 3+, brew (latest versions should be fine. Python actually not really needed since conda with provision that for you I think as below)
+2. Install conda 4.4+, python 3+, brew (latest versions should be fine. Python actually not really needed since conda with
+provision that for you I think as below)
 3. Install and start postgresql:
 ```
 brew update
 brew install postgresql
 brew services start postgresql
 ```
-4. Create a database with a name you want or use default configurations (which will create database with the same name as your system username) with command below:
+4. Create a database with a name you want or use default configurations (which will create database with the same name as your
+system username) with command below:
 ```
 createdb
 ```
@@ -30,7 +32,8 @@ GRANT ALL PRIVILEGES ON DATABASE db_name TO <username>;
 ```
 $ conda env create -f environment.yml
 ```
-7. Activate the environment. As the instructions after setting up the environment should say, you can activate or deactivate the environment with:
+7. Activate the environment. As the instructions after setting up the environment should say, you can activate or deactivate
+the environment with:
 ```
 # activate
 source activate datareachdev
@@ -79,7 +82,8 @@ python manage.py runserver
 #
 # If using postman, please read below:
 # NOTE: To access /api, you must first authenticate first by POST to /auth with username and password fields of the superuser 
-# you created above, or other users you create later. The POST request will return an authentication token, which you must use # in the header following standard token authentication practices, where <token> is the returned token:
+# you created above, or other users you create later. The POST request will return an authentication token, which you must use
+# in the header following standard token authentication practices, where <token> is the returned token:
 # key: Authorization
 # value: Token <token>
 # NOTE: All POST requests must end in backslash
@@ -96,7 +100,8 @@ POST api/hospitals/
 }
 # ALL FIELDS REQUIRED
 
-# get any specific hospital (if superuser), or get your own hospital information, if supplying your own hospital id (otherwise get rejected)
+# get any specific hospital (if superuser), or get your own hospital information, if supplying your own hospital id (otherwise
+# get rejected)
 GET api/hospitals/id/
 
 # get list of doctors (if superuser), or get your own information (if normal user)
@@ -130,7 +135,8 @@ POST api/patients/
 # get any specific patient (if superuser), or get patient of your hospital (if normal user) or rejected if not your patient
 GET api/patients/id/
 
-# perform standard actions on any specific patient (if superuser), or your own hospital's patients only and get rejected otherwise (if normal user)
+# perform standard actions on any specific patient (if superuser), or your own hospital's patients only and get rejected
+# otherwise (if normal user)
 PUT/DELETE api/patients/id/
 
 # get list of visits (if superuser), or get visits of your hospital (if normal user)
@@ -145,7 +151,8 @@ POST api/visits/
 # get any specific visit (if superuser) or get visit of your hospital if providing correct id or get rejected otherwise
 GET api/visits/id/
 
-# perform standard actions on any specific visit (if superuser), or your own hospital's visit if providing correct id or get rejected otherwise
+# perform standard actions on any specific visit (if superuser), or your own hospital's visit if providing correct id or get
+# rejected otherwise
 PUT/DELETE api/visits/id/
 ```
 
