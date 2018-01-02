@@ -74,6 +74,10 @@ python manage.py runserver
 
 # API Schema
 ```
+# You can actually test out the API by using the browser to first (IMPORTANT!) log into /admin so the token is stored in the
+# browser and then directly navigating to api/ to use the provided interface.
+#
+# If using postman, please read below:
 # NOTE: To access /api, you must first authenticate first by POST to /auth with username and password fields of the superuser 
 # you created above, or other users you create later. The POST request will return an authentication token, which you must use # in the header following standard token authentication practices, where <token> is the returned token:
 # key: Authorization
