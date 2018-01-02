@@ -74,7 +74,8 @@ python manage.py runserver
 
 # API Schema
 ```
-# NOTE: To access /api, you must first authenticate first by POST to /auth with username and password fields of the superuser # you created above, or other users you create later. The POST request will return an authentication token, which you must use # in the header following standard token authentication practices, where <token> is the returned token:
+# NOTE: To access /api, you must first authenticate first by POST to /auth with username and password fields of the superuser 
+# you created above, or other users you create later. The POST request will return an authentication token, which you must use # in the header following standard token authentication practices, where <token> is the returned token:
 # key: Authorization
 # value: Token <token>
 # NOTE: All POST requests must end in backslash
